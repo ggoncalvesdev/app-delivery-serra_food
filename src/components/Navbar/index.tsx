@@ -9,10 +9,17 @@ import logoNav from "../../../assets/perfilNav.png";
 import oferecer from "../../../assets/oferecer.png";
 import { styles } from "./style";
 
-export const Navbar = () => {
+export const Navbar = ({ navigation }) => {
+    const buscar = () => {
+        navigation.reset({
+            index: 0,
+            routes: [{ name: "Navbar" }],
+        });
+    };
+
     return (
         <View style={styles.navBar}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => buscar()}>
                 <View style={styles.navBarIcon}>
                     <Image
                         source={procurar}
