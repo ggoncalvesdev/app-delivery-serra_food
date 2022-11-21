@@ -6,9 +6,9 @@ import { HomeTabStack } from "./src/services/Routes/HomeTabStack";
 import { Busca } from "./src/pages/Search";
 import { Navbar } from "./src/components/Navbar";
 
-const Tab = createBottomTabNavigator();
-
 export default function App() {
+    const Tab = createBottomTabNavigator();
+
     return (
         <NavigationContainer>
             <Tab.Navigator>
