@@ -1,37 +1,9 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { View, Text, TouchableOpacity } from "react-native";
 
-function Perfil() {
-    return (
-        <View>
-            <Text>Perfil</Text>
-        </View>
-    );
-}
+import { HomeScren } from "../../pages/Text/HomeScren";
+import { Perfil } from "../../pages/Perfil";
 
-function HomeScren({ navigation }) {
-    /* console.warn(navigation.navigate); */
-    return (
-        <View
-            style={{ justifyContent: "center", alignItems: "center", flex: 1 }}
-        >
-            <Text>Início</Text>
-            {[1, 2, 3, 4, 5].map((item) => {
-                return (
-                    <TouchableOpacity
-                        key={item}
-                        onPress={() => {
-                            navigation.navigate("Perfil");
-                        }}
-                    >
-                        <Text>Restaurante: 0{item}</Text>
-                    </TouchableOpacity>
-                );
-            })}
-        </View>
-    );
-}
 export function HomeTabStack() {
     const HomeStack = createStackNavigator();
 
