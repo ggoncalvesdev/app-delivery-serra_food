@@ -18,21 +18,19 @@ export const Navbar = () => {
                         source={procurar}
                         style={[styles.imagemNav, styles.select]}
                     />
-                    <Text style={[styles.textoNav, styles.select]}>
-                        Procurar
-                    </Text>
+                    <Text style={[styles.textoNav, styles.select]}>Início</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity>
                 <View style={styles.navBarIcon}>
                     <Image source={oferecer} style={styles.imagemNav} />
-                    <Text style={styles.textoNav}>Oferecer</Text>
+                    <Text style={styles.textoNav}>Busca</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity>
                 <View style={styles.navBarIcon}>
                     <Image source={logo} style={styles.imagemNavLogo} />
-                    <Text style={styles.textoNav}>Suas viagens</Text>
+                    <Text style={styles.textoNav}>Pedidos</Text>
                 </View>
             </TouchableOpacity>
             <TouchableOpacity>
@@ -41,12 +39,12 @@ export const Navbar = () => {
                     <Text style={styles.textoNav}>Mensagens</Text>
                 </View>
             </TouchableOpacity>
-            <TouchableOpacity>
+            {/* <TouchableOpacity>
                 <View style={styles.navBarIcon}>
                     <Image source={logoNav} style={styles.imagemNav} />
                     <Text style={styles.textoNav}>Perfil</Text>
                 </View>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
         </View>
     );
 };
