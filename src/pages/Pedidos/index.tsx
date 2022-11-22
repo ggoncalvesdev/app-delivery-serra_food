@@ -15,10 +15,10 @@ export const Pedidos = () => {
 
     return(
 
-        <View>
-
-            <Text>Pedidos</Text>
-
+        <View style={styles.container}>
+            <View>
+                <Text >Meu Pedido</Text>
+            </View>
             {/* <FlatList
                 data={listaDePedidos}
                 keyExtractor={item => item.index}
