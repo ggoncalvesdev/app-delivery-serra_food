@@ -7,14 +7,12 @@ export const Home = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <ScrollView>
-                <ScrollView
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
+                <View
                     style={styles.navbar}
                 >
                     <TouchableOpacity
                         onPress={() => {
-                            navigation.navigate("Perfil");
+                            navigation.navigate("Home");
                         }}
                         style={styles.buttonNavbar}
                     >
@@ -23,7 +21,7 @@ export const Home = ({ navigation }) => {
 
                     <TouchableOpacity
                         onPress={() => {
-                            navigation.navigate("Perfil");
+                            navigation.navigate("Restaurantes");
                         }}
                         style={styles.buttonNavbar}
                     >
@@ -32,40 +30,15 @@ export const Home = ({ navigation }) => {
 
                     <TouchableOpacity
                         onPress={() => {
-                            navigation.navigate("Perfil");
+                            navigation.navigate("Cozinhas");
                         }}
                         style={styles.buttonNavbar}
                     >
-                        <Text style={styles.textNavbar}>Mercados</Text>
+                        <Text style={styles.textNavbar}>Cozinhas</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity
-                        onPress={() => {
-                            navigation.navigate("Perfil");
-                        }}
-                        style={styles.buttonNavbar}
-                    >
-                        <Text style={styles.textNavbar}>Bebidas</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity
-                        onPress={() => {
-                            navigation.navigate("Perfil");
-                        }}
-                        style={styles.buttonNavbar}
-                    >
-                        <Text style={styles.textNavbar}>Farmácias</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity
-                        onPress={() => {
-                            navigation.navigate("Perfil");
-                        }}
-                        style={styles.buttonNavbar}
-                    >
-                        <Text style={styles.textNavbar}>Pets</Text>
-                    </TouchableOpacity>
-                </ScrollView>
+                    
+                </View>
 
                 <View style={styles.containerLastStore}>
                     <Text style={styles.titleLastStore}>
