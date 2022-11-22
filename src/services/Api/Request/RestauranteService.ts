@@ -1,5 +1,10 @@
 import { api } from "../api";
 
+export interface listaRestaurantes {
+    index: string,
+    nome: string
+}
+
 const getAll = () => {
     return api.get("restaurantes");
 };

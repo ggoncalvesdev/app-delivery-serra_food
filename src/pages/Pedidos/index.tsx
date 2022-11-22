@@ -11,13 +11,35 @@ export const Pedidos = () => {
 
     const [indexSelecionado, setIndexSelecionadoo] = useState<string>("");
     const [precoSelecionado, setPrecoSelecionado] = useState<number>(0);
-    const [modal, setModal] = useState<boolean>(false);
+    // const [modal, setModal] = useState<boolean>(false);
 
     return(
 
         <View style={styles.container}>
-            <View>
-                <Text >Meu Pedido</Text>
+            <View style={styles.contentTitle}>
+                <Text style={styles.title} >Meu Pedido</Text>
+            </View>
+            <View style={styles.contentRestaurante}>
+                <Text style={styles.titleRestaurante}>Nome do Restaurante</Text>
+            </View>
+
+            <View style={styles.contentPedido}>
+                <Text style={styles.text}>Pedido:</Text>
+                <Text style={styles.text}>nome da comida</Text>
+            </View>
+            <View style={styles.contentPedido}>
+                <Text style={styles.text}>Preço:</Text>
+                <Text style={styles.text}>preco da comida</Text>
+            </View>
+
+
+            <View style={styles.contentPrecoFinal}>
+                <Text  style={styles.text}>
+                    Preço:
+                </Text>
+                <Text  style={styles.text}>
+                    Preço total
+                </Text>
             </View>
             {/* <FlatList
                 data={listaDePedidos}
