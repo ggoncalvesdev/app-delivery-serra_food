@@ -11,11 +11,12 @@ export const styles = StyleSheet.create({
     
     
     navbar:{
-
+        flexDirection:"row",
+        justifyContent:"space-around",
     },
 
     buttonNavbar:{
-        marginRight: 12,
+        
         width: 'auto',
         height: 20
     },
