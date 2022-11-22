@@ -5,6 +5,7 @@ import { HomeScren } from "../../pages/Text/HomeScren";
 import { Restaurantes } from "../../pages/Restaurantes";
 import { Home } from "../../pages/Home";
 import { Cozinhas } from "../../pages/Cozinhas";
+import { Pedidos } from "../../pages/Pedidos";
 
 export function HomeTabStack() {
     const HomeStack = createStackNavigator();
@@ -14,6 +15,7 @@ export function HomeTabStack() {
             <HomeStack.Screen name="Homeeee" component={Home} />
             <HomeStack.Screen name="Restaurantes" component={Restaurantes} /> 
             <HomeStack.Screen name="Cozinhas" component={Cozinhas} />
+            <HomeStack.Screen name="Pedidos" component={Pedidos} />
         </HomeStack.Navigator>
     );
 }
