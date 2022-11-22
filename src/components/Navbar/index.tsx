@@ -19,7 +19,7 @@ export const Navbar = ({ navigation }) => {
 
     return (
         <View style={styles.navBar}>
-            <TouchableOpacity onPress={() => buscar()}>
+            {/* <TouchableOpacity onPress={() => buscar()}>
                 <View style={styles.navBarIcon}>
                     <Image
                         source={procurar}
@@ -39,13 +39,13 @@ export const Navbar = ({ navigation }) => {
                     <Image source={logo} style={styles.imagemNavLogo} />
                     <Text style={styles.textoNav}>Pedidos</Text>
                 </View>
-            </TouchableOpacity>
-            <TouchableOpacity>
+            </TouchableOpacity> */}
+            {/* <TouchableOpacity>
                 <View style={styles.navBarIcon}>
                     <Image source={mensagens} style={styles.imagemNav} />
                     <Text style={styles.textoNav}>Mensagens</Text>
                 </View>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
             {/* <TouchableOpacity>
                 <View style={styles.navBarIcon}>
                     <Image source={logoNav} style={styles.imagemNav} />

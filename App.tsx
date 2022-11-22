@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { HomeTabStack } from "./src/services/Routes/HomeTabStack";
 import { Busca } from "./src/pages/Search";
 import { Navbar } from "./src/components/Navbar";
+import { Pedidos } from "./src/pages/Pedidos";
 
 export default function App() {
     const Tab = createBottomTabNavigator();
@@ -25,7 +26,7 @@ export default function App() {
                 <Tab.Screen
                     options={{ headerShown: false }}
                     name="Pedidos"
-                    component={Navbar}
+                    component={Pedidos}
                 />
                 {/*     <Tab.Screen
                     options={{ headerShown: false }}
