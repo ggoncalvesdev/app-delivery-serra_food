@@ -1,5 +1,11 @@
 import { api } from "../api";
 
+export interface listaPrdutos {
+    index: string,
+    nome: string,
+    preco: number
+}
+
 const getAll = (id) => {
     return api.get(`restaurantes/${id}/produtos`);
 };
