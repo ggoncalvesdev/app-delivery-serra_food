@@ -1,35 +1,60 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
+//import { listaPedidos } from '';
 
-interface ProvedorCarrinhoProps {
-    children: React.ReactNode;
-}
+// interface ProvedorCarrinhoProps {
+//     children: React.ReactNode;
+// }
 
 // interface CarrinhoContextoProps{
 //   listaDePedidos:listaPedidos[];
-//   salvaListaDePedidos:
+//   salvaListaDePedidos: (pedidos: listaPedidos) => void;
+//   precoTotal: number;
+//   removePedidoDoCarrinho: (index:string) => void;
 // }
 // export const CarrinhoContexto = createContext<CarrinhoContextoProps>({
-//   listaDeEquipamentos:[{
-//     index:"",
-//     nome:"",
-//     url:"",
+//     listaDePedidos:[{
+//         index:"",
+//         nome:"",
+//         url:"",
 //   }],
-//   salvaListaDePedidos:(listaPedidos: listapedidos[])=>{},
+//   salvaListaDePedidos:(pedidos: listaPedidos) => { },
+//   precoTotal:0,
+//   removePedidoDoCarrinho: (index: string) => { },
 
 // });
 
-// export const ProvedorCarrinho = ({children: ProvedorCarrinhoProps})=>{
-//   const [listaDePedidos, setListaDePedidos] = useState();/* <listaPedidos[]>([]); */
+// export const ProvedorCarrinho = ({children}: ProvedorCarrinhoProps)=>{
+//     const [listaDePedidos, setListaDePedidos] = useState()<listaPedidos[]>([]); 
+//     const [precoTotal, setPrecoTotal] = useState<number>(0);
 
-//   function salvaListaDePedidos (/* listaPedidos,listaPedidos[] */){
-//     setListaDePedidos(/* listaPedidos */)
-//   }
+//     useEffect(() =>{
+//         let soma = 0;
+//         listaDePedidos.lenght >=1 && listaDePedidos.map((pedido: listaPedidos) => {
+//             soma = soma + Number(pedido.preco)
+//         });
+//         setPrecoTotal(soma);
+//     },[listaDePedidos])
+
+
+//   function salvaListaDePedidos (pedido: listaPedidos[]){
+//     setListaDePedidos([...listaDePedidos, pedido]);
+//   };
+
+//   function removePedidoDoCarrinho (index : string) {
+//     let novaListaDePedidos = listaDePedidos.filter((pedido) => {
+//         return pedido.index !== index
+//     })
+//     setListaDePedidos(novaListaDePedidos);
+//   };
 
 //   return (
 //     <CarrinhoContexto.Provider
 //       value={{
 //         listaDePedidos,
-//         setListaDePedidos}}
+//         salvaListaDePedidos,
+//         precoTotal,
+//         removePedidoDoCarrinho
+//     }}
 //     >
 //       {children}
 //     </CarrinhoContexto.Provider>
