@@ -12,7 +12,7 @@ export function HomeTabStack() {
     return (
         <HomeStack.Navigator>
             <HomeStack.Screen name="Homeeee" component={Home} />
-            <HomeStack.Screen name="Restaurantes" component={Restaurantes} /> 
+            <HomeStack.Screen name="Restaurantes" component={Restaurantes} />
             <HomeStack.Screen name="Cozinhas" component={Cozinhas} />
         </HomeStack.Navigator>
     );
