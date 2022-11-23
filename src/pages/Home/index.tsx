@@ -7,15 +7,7 @@ export const Home = ({ navigation }) => {
         <View style={styles.container}>
             <ScrollView>
                 <View style={styles.navbar}>
-                    <TouchableOpacity
-                        onPress={() => {
-                            navigation.navigate("Home");
-                        }}
-                        style={styles.buttonNavbar}
-                    >
-                        <Text style={styles.textNavbar}>Início</Text>
-                    </TouchableOpacity>
-
+                    
                     <TouchableOpacity
                         onPress={() => {
                             navigation.navigate("Produtos");
@@ -34,6 +26,7 @@ export const Home = ({ navigation }) => {
                         <Text style={styles.textNavbar}>Categorias</Text>
                     </TouchableOpacity>
                 </View>
+
             </ScrollView>
         </View>
     );
