@@ -1,33 +1,38 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, ActivityIndicator, FlatList, Image, TouchableOpacity } from "react-native";
+import {
+    View,
+    Text,
+    ActivityIndicator,
+    FlatList,
+    Image,
+    TouchableOpacity,
+} from "react-native";
 import { styles } from "../Produtos/style";
 
-import { listaPrdutos } from "../../services/Api/Request/ProdutoService";
+import { listaProdutos } from "../../services/Api/Request/ProdutoService";
 import { CardProduto } from "../../components/CardProduto";
 import { style } from "../Search/style";
 
-export const Produtos=()=>{
-
-    const [listaProdutos, setListaProdutos ] = useState<listaPrdutos[]>([]);
+export const Produtos = () => {
+    const [listaProdutos, setListaProdutos] = useState<listaProdutos[]>([]);
     const [carregando, setCarregando] = useState<boolean>(false);
     const [indexSelecionado, setIndexSelecionado] = useState<string>("");
     const [modal, setModal] = useState<boolean>(false);
 
-    interface listaProps{
-        id: string,
-        nome: string,
-        valor: number,
-        categoria: string
+    interface listaProps {
+        id: string;
+        nome: string;
+        valor: number;
+        categoria: string;
     }
     const lista: Array<listaProps> = [
-        { id: "1", nome: "iPad", valor: 4000, categoria: "Eletrônicos"},
-        { id: "1", nome: "iPad", valor: 4000, categoria: "Eletrônicos"},
-        { id: "1", nome: "iPad", valor: 4000, categoria: "Eletrônicos"},
-        { id: "1", nome: "iPad", valor: 4000, categoria: "Eletrônicos"},
-        { id: "1", nome: "iPad", valor: 4000, categoria: "Eletrônicos"},
-        { id: "1", nome: "iPad", valor: 4000, categoria: "Eletrônicos"},
-
-    ]
+        { id: "1", nome: "iPad", valor: 4000, categoria: "Eletrônicos" },
+        { id: "1", nome: "iPad", valor: 4000, categoria: "Eletrônicos" },
+        { id: "1", nome: "iPad", valor: 4000, categoria: "Eletrônicos" },
+        { id: "1", nome: "iPad", valor: 4000, categoria: "Eletrônicos" },
+        { id: "1", nome: "iPad", valor: 4000, categoria: "Eletrônicos" },
+        { id: "1", nome: "iPad", valor: 4000, categoria: "Eletrônicos" },
+    ];
     // useEffect(()=> {
     //     requisicaoListaProdutos();
 
@@ -51,20 +56,19 @@ export const Produtos=()=>{
                 <Text style={styles.titleHeader}>Categoria</Text>
                 <Text style={styles.titleHeader}>Preço</Text>
             </View>
-            {carregando ?
-                <ActivityIndicator size={"large"}
-                />
-                :
+            {carregando ? (
+                <ActivityIndicator size={"large"} />
+            ) : (
                 <FlatList
                     data={lista}
-                    keyExtractor={item => item.id}
-                    renderItem={({item}) =>{
-                        return(
-
-                            <TouchableOpacity
-                             style={styles.content}>
+                    keyExtractor={(item) => item.id}
+                    renderItem={({ item }) => {
+                        return (
+                            <TouchableOpacity style={styles.content}>
                                 <Text style={styles.title}>{item.nome}</Text>
-                                <Text style={styles.title}>{item.categoria}</Text>
+                                <Text style={styles.title}>
+                                    {item.categoria}
+                                </Text>
                                 <Text style={styles.title}>R${item.valor}</Text>
                             </TouchableOpacity>
                             // <CardProduto
@@ -72,14 +76,10 @@ export const Produtos=()=>{
                             //     setIndexSelecionado={setIndexSelecionado}
                             //     setModal={setModal}
                             // />
-                        )
-                    }
-                }
+                        );
+                    }}
                 />
-
-
-            }
-
+            )}
         </View>
-    )
-}
+    );
+};
