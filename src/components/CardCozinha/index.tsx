@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, FlatList } from "react-native";
+import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
 import restaurantService, { listaRestaurantes } from "../../services/Api/Request/RestauranteService";
+import { styles } from "./style";
 
-export const Restaurantes=()=>{
+
+
+export const CardCozinha = () => {
 
     const [carregando, setCarregando] = useState<boolean>(false);
     const [listaRestaurantes, setListaRestaurantes] = useState<listaRestaurantes[]>([]);
-    const [indexSelecionado, setIndexSelecionado] = useState<string>("");
+    const [indexSelecionado, setIndexSelecionado] = useState<string>("")
+
 
     useEffect(()=> {
         requisicaoListaRestaurantes();
@@ -22,17 +26,18 @@ export const Restaurantes=()=>{
             setCarregando(false);
         });
     }
-    return (
+    return(
+
         <View>
-            <Text>Restaurantes</Text>
             <FlatList 
             data={listaRestaurantes}
             keyExtractor={item => item.index}
             renderItem={({item}) => {
                 return(
                     <View>
-                        <Text>Restaurantes</Text>
                         <Text>{item.nome}</Text>
+                        {/* <Text>{item.cozinha[0]}</Text> */}
+
                     </View>
                 )
             }}

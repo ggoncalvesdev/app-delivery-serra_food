@@ -1,11 +1,21 @@
+import { AxiosResponse } from "axios";
 import { api } from "../api";
 
 export interface listaRestaurantes {
     index: string,
-    nome: string
+    nome: string,
+    taxaFrete: number;
+    cozinha: listaRestaurantes[];
 }
 
-const getAll = () => {
+interface getRestaurantesProps {
+    id: number;
+    nome: string;
+    taxaFrete: number;
+    cozinha: listaRestaurantes[];
+}
+
+const getAll = (): Promise<AxiosResponse<getRestaurantesProps, any>> => {
     return api.get("restaurantes");
 };
 
