@@ -19,7 +19,7 @@ export const CardCozinha = () => {
     }
     const lista: Array<listaProps> = [
         { id: "1", nome: "Kinpai", cozinha: "Japonesa"},
-        { id: "2", nome: "Kinpai", cozinha: "Japonesa"},
+        { id: "2", nome: "Japatê", cozinha: "Japonesa"},
         { id: "3", nome: "Kinpai", cozinha: "Japonesa"},
         { id: "4", nome: "Kinpai", cozinha: "Japonesa"},
         { id: "5", nome: "Kinpai", cozinha: "Japonesa"},
