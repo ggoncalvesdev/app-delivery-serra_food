@@ -24,7 +24,7 @@ import React, { createContext, useEffect, useState } from "react";
 // });
 
 // export const ProvedorCarrinho = ({children}: ProvedorCarrinhoProps)=>{
-//     const [listaDePedidos, setListaDePedidos] = useState()<listaPedidos[]>([]); 
+//     const [listaDePedidos, setListaDePedidos] = useState()<listaPedidos[]>([]);
 //     const [precoTotal, setPrecoTotal] = useState<number>(0);
 
 //     useEffect(() =>{
@@ -34,7 +34,6 @@ import React, { createContext, useEffect, useState } from "react";
 //         });
 //         setPrecoTotal(soma);
 //     },[listaDePedidos])
-
 
 //   function salvaListaDePedidos (pedido: listaPedidos[]){
 //     setListaDePedidos([...listaDePedidos, pedido]);

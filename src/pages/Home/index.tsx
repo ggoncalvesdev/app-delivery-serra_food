@@ -2,14 +2,11 @@ import React from "react";
 import { Image, Text, TouchableOpacity, View, ScrollView } from "react-native";
 import { styles } from "./style";
 
-import McDonalds from "../../assets/img/mcdonalds.png";
 export const Home = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <ScrollView>
-                <View
-                    style={styles.navbar}
-                >
+                <View style={styles.navbar}>
                     <TouchableOpacity
                         onPress={() => {
                             navigation.navigate("Home");
@@ -36,11 +33,7 @@ export const Home = ({ navigation }) => {
                     >
                         <Text style={styles.textNavbar}>Categorias</Text>
                     </TouchableOpacity>
-
-                    
                 </View>
-
-                
             </ScrollView>
         </View>
     );

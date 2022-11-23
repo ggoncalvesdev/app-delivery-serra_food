@@ -1,29 +1,38 @@
+import { AxiosResponse } from "axios";
 import { api } from "../api";
 
-export interface listaPrdutos {
-    id: string,
-    nome: string,
-    valor: number
+export interface listaProdutos {
+    id: string;
+    nome: string;
+    descricao: string;
+    qtdEstoque: string;
+    valor: string;
+    idCategoria: string;
+    nomeCategoria: string;
+    idFuncionario: string;
+    nomeFuncionario: string;
+    dataFabricacao: string;
+    fotoLink: string;
 }
 
-const getAll = (id) => {
-    return api.get(`restaurantes/${id}/produtos`);
+const getAll = (): Promise<AxiosResponse<listaProdutos[], any>> => {
+    return api.get(`produto/listaProdutos`);
 };
 
-const get = (idRestaurante: number, idProduto: number) => {
-    return api.get(`restaurantes/${idRestaurante}/produtos/${idProduto}`);
+const get = (idProduto: number) => {
+    return api.get(`produto/${idProduto}`);
 };
 
-const create = (id: number, data) => {
-    return api.post(`restaurantes/${id}/produtos`, data);
+const create = (data) => {
+    return api.post(`produtos`, data);
 };
 
-const update = (idRestaurante: number, idProduto: number, data) => {
-    return api.put(`restaurantes/${idRestaurante}/produtos/${idProduto}`, data);
+const update = (idProduto: number, data) => {
+    return api.put(`produtos/${idProduto}`, data);
 };
 
-const remove = (idRestaurante: number, idProduto: number) => {
-    return api.delete(`restaurantes/${idRestaurante}/produtos/${idProduto}`);
+const remove = (idProduto: number) => {
+    return api.delete(`produtos/${idProduto}`);
 };
 const produtosService = {
     getAll,

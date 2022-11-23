@@ -28,11 +28,6 @@ export default function App() {
                     name="Pedidos"
                     component={Pedidos}
                 />
-                {/*     <Tab.Screen
-                    options={{ headerShown: false }}
-                    name="Perfil"
-                    component={Navbar}
-                /> */}
             </Tab.Navigator>
         </NavigationContainer>
     );
