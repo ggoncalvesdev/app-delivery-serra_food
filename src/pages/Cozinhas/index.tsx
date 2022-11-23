@@ -43,7 +43,7 @@ export const Cozinhas = ({ navigation }) => {
                     >
                         <TouchableOpacity
                             onPress={() => {
-                                navigation.navigate("Perfil");
+                                navigation.navigate("CardCozinha");
                             }}
                             style={styles.lastStore}
                         >
