@@ -1,9 +1,9 @@
 import { api } from "../api";
 
 export interface listaPrdutos {
-    index: string,
+    id: string,
     nome: string,
-    preco: number
+    valor: number
 }
 
 const getAll = (id) => {

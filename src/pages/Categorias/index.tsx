@@ -9,7 +9,7 @@ import Fastfood from "../../assets/img/fastfood.png";
 import Pizza from "../../assets/img/pizza.png";
 import Açai from "../../assets/img/açai.png";
 import { setStatusBarHidden } from "expo-status-bar";
-export const Cozinhas = ({ navigation }) => {
+export const Categorias = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <ScrollView>

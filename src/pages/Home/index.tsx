@@ -21,157 +21,26 @@ export const Home = ({ navigation }) => {
 
                     <TouchableOpacity
                         onPress={() => {
-                            navigation.navigate("Restaurantes");
+                            navigation.navigate("Produtos");
                         }}
                         style={styles.buttonNavbar}
                     >
-                        <Text style={styles.textNavbar}>Restaurantes</Text>
+                        <Text style={styles.textNavbar}>Produtos</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity
                         onPress={() => {
-                            navigation.navigate("Cozinhas");
+                            navigation.navigate("Categorias");
                         }}
                         style={styles.buttonNavbar}
                     >
-                        <Text style={styles.textNavbar}>Cozinhas</Text>
+                        <Text style={styles.textNavbar}>Categorias</Text>
                     </TouchableOpacity>
 
                     
                 </View>
 
-                <View style={styles.containerLastStore}>
-                    <Text style={styles.titleLastStore}>
-                        Últimos restaurantes
-                    </Text>
-                    <ScrollView
-                        horizontal
-                        showsHorizontalScrollIndicator={false}
-                        style={styles.contentLastStore}
-                    >
-                        <TouchableOpacity
-                            onPress={() => {
-                                navigation.navigate("Perfil");
-                            }}
-                            style={styles.lastStore}
-                        >
-                            <Image
-                                style={styles.imageLastStore}
-                                source={McDonalds}
-                            ></Image>
-                            <Text>Mc Donald's</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            onPress={() => {
-                                navigation.navigate("Perfil");
-                            }}
-                            style={styles.lastStore}
-                        >
-                            <Image
-                                style={styles.imageLastStore}
-                                source={McDonalds}
-                            ></Image>
-                            <Text>Mc Donald's</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            onPress={() => {
-                                navigation.navigate("Perfil");
-                            }}
-                            style={styles.lastStore}
-                        >
-                            <Image
-                                style={styles.imageLastStore}
-                                source={McDonalds}
-                            ></Image>
-                            <Text>Mc Donald's</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            onPress={() => {
-                                navigation.navigate("Perfil");
-                            }}
-                            style={styles.lastStore}
-                        >
-                            <Image
-                                style={styles.imageLastStore}
-                                source={McDonalds}
-                            ></Image>
-                            <Text>Mc Donald's</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            onPress={() => {
-                                navigation.navigate("Perfil");
-                            }}
-                            style={styles.lastStore}
-                        >
-                            <Image
-                                style={styles.imageLastStore}
-                                source={McDonalds}
-                            ></Image>
-                            <Text>Mc Donald's</Text>
-                        </TouchableOpacity>
-                    </ScrollView>
-                </View>
-
-                <View style={styles.containerLastStore}>
-                    <Text style={styles.titleLastStore}>Favoritos</Text>
-                    <ScrollView
-                        horizontal
-                        showsHorizontalScrollIndicator={false}
-                        style={styles.contentLastStore}
-                    >
-                        <TouchableOpacity style={styles.lastStore}>
-                            <Image
-                                style={styles.imageLastStore}
-                                source={McDonalds}
-                            ></Image>
-                            <Text>Mc Donald's</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.lastStore}>
-                            <Image
-                                style={styles.imageLastStore}
-                                source={McDonalds}
-                            ></Image>
-                            <Text>Mc Donald's</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.lastStore}>
-                            <Image
-                                style={styles.imageLastStore}
-                                source={McDonalds}
-                            ></Image>
-                            <Text>Mc Donald's</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.lastStore}>
-                            <Image
-                                style={styles.imageLastStore}
-                                source={McDonalds}
-                            ></Image>
-                            <Text>Mc Donald's</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.lastStore}>
-                            <Image
-                                style={styles.imageLastStore}
-                                source={McDonalds}
-                            ></Image>
-                            <Text>Mc Donald's</Text>
-                        </TouchableOpacity>
-                    </ScrollView>
-                </View>
-
-                <View style={styles.containerStores}>
-                    <Text style={styles.titleLastStore}>Lojas</Text>
-
-                    <TouchableOpacity style={styles.contentStore}>
-                        <Image
-                            style={styles.imageLastStore}
-                            source={McDonalds}
-                        ></Image>
-                        <View style={styles.infoStore}>
-                            <Text>Mc Donald's</Text>
-                            <Text>Lanches</Text>
-                            <Text>R$5,00</Text>
-                        </View>
-                    </TouchableOpacity>
-                </View>
+                
             </ScrollView>
         </View>
     );
