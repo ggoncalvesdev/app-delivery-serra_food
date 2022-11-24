@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
     Image,
     Text,
@@ -6,20 +6,22 @@ import {
     TouchableOpacityProps,
     View,
 } from "react-native";
+
+import { CarrinhoContexto } from "../Context/CarrinhoContexto";
 import { listaProdutos } from "../services/repository/produtoRepository";
 import { style } from "./style";
+import { AntDesign } from '@expo/vector-icons';
 
 interface ProdutosCardProps extends TouchableOpacityProps {
     produto: listaProdutos;
     setModal: React.Dispatch<React.SetStateAction<boolean>>;
-    setIndexSelecionado: React.Dispatch<React.SetStateAction<string>>;
+    setIndexSelecionado: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export const ProdutoCard = ({
-    produto,
-    setModal,
-    setIndexSelecionado,
-}: ProdutosCardProps) => {
+export const ProdutoCard = ({produto, setModal, setIndexSelecionado}: ProdutosCardProps) => {
+
+    const removeProdutoDoCarrinho = useContext(CarrinhoContexto).removeProdutoDoCarrinho
+
     function abreModal() {
         setModal(true);
         setIndexSelecionado(produto.id);
@@ -34,8 +36,10 @@ export const ProdutoCard = ({
                         source={{ uri: produto.fotoLink }}
                     />
                     <Text style={style.title}>{produto.nome}</Text>
-                    {/* <Text style={styles.title}>{item.descricao}</Text> */}
                     <Text style={style.price}> R${produto.valor},00</Text>
+                    <TouchableOpacity onPress={() =>removeProdutoDoCarrinho(produto.id) }>
+                        <AntDesign name="closecircleo" size={24} color="white" />
+                    </TouchableOpacity>
                 </View>
             </View>
         </TouchableOpacity>

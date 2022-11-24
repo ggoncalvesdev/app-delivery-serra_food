@@ -1,61 +1,68 @@
 import React, { createContext, useEffect, useState } from "react";
-//import { listaPedidos } from '';
+import { listaProdutos } from "../../services/Api/Request/ProdutoService"
+interface ProvedorCarrinhoProps {
+    children: React.ReactNode;
+}
 
-// interface ProvedorCarrinhoProps {
-//     children: React.ReactNode;
-// }
+interface CarrinhoContextoProps{
+  listaDeProdutos:listaProdutos[];
+  salvaListaDeProdutos: (produtos: listaProdutos) => void;
+  precoTotal: number;
+  removeProdutoDoCarrinho: (index:number) => void;
+}
+export const CarrinhoContexto = createContext<CarrinhoContextoProps>({
+    listaDeProdutos:[{
+        id: 0,
+        nome: "",
+        descricao: "",
+        qtdEstoque: 0,
+        valor: 0,
+        idCategoria: "",
+        nomeCategoria: "",
+        idFuncionario: "",
+        nomeFuncionario: "",
+        dataFabricacao: "",
+        fotoLink: "",
+    }],
+  salvaListaDeProdutos:(produtos: listaProdutos) => { },
+  precoTotal:0,
+  removeProdutoDoCarrinho: (index: number) => { },
 
-// interface CarrinhoContextoProps{
-//   listaDePedidos:listaPedidos[];
-//   salvaListaDePedidos: (pedidos: listaPedidos) => void;
-//   precoTotal: number;
-//   removePedidoDoCarrinho: (index:string) => void;
-// }
-// export const CarrinhoContexto = createContext<CarrinhoContextoProps>({
-//     listaDePedidos:[{
-//         index:"",
-//         nome:"",
-//         url:"",
-//   }],
-//   salvaListaDePedidos:(pedidos: listaPedidos) => { },
-//   precoTotal:0,
-//   removePedidoDoCarrinho: (index: string) => { },
+});
 
-// });
+export const ProvedorCarrinho = ({children}: ProvedorCarrinhoProps)=>{
+    const [listaDeProdutos, setListaDeProdutos] = useState<listaProdutos[]>([]);
+    const [precoTotal, setPrecoTotal] = useState<number>(0);
 
-// export const ProvedorCarrinho = ({children}: ProvedorCarrinhoProps)=>{
-//     const [listaDePedidos, setListaDePedidos] = useState()<listaPedidos[]>([]);
-//     const [precoTotal, setPrecoTotal] = useState<number>(0);
+    useEffect(() =>{
+        let soma = 0;
+        listaDeProdutos.length >=1 && listaDeProdutos.map((produto: listaProdutos) => {
+            soma = soma + Number(produto.valor)
+        });
+        setPrecoTotal(soma);
+    },[listaDeProdutos])
 
-//     useEffect(() =>{
-//         let soma = 0;
-//         listaDePedidos.lenght >=1 && listaDePedidos.map((pedido: listaPedidos) => {
-//             soma = soma + Number(pedido.preco)
-//         });
-//         setPrecoTotal(soma);
-//     },[listaDePedidos])
+  function salvaListaDeProdutos (produto: listaProdutos){
+    setListaDeProdutos([...listaDeProdutos, produto]);
+  };
 
-//   function salvaListaDePedidos (pedido: listaPedidos[]){
-//     setListaDePedidos([...listaDePedidos, pedido]);
-//   };
+  function removeProdutoDoCarrinho (index : number) {
+    let novaListaDeProdutos = listaDeProdutos.filter((produto) => {
+        return produto.id !== index
+    })
+    setListaDeProdutos(novaListaDeProdutos);
+  };
 
-//   function removePedidoDoCarrinho (index : string) {
-//     let novaListaDePedidos = listaDePedidos.filter((pedido) => {
-//         return pedido.index !== index
-//     })
-//     setListaDePedidos(novaListaDePedidos);
-//   };
-
-//   return (
-//     <CarrinhoContexto.Provider
-//       value={{
-//         listaDePedidos,
-//         salvaListaDePedidos,
-//         precoTotal,
-//         removePedidoDoCarrinho
-//     }}
-//     >
-//       {children}
-//     </CarrinhoContexto.Provider>
-//     )
-// }
+  return (
+    <CarrinhoContexto.Provider
+      value={{
+        listaDeProdutos,
+        salvaListaDeProdutos,
+        precoTotal,
+        removeProdutoDoCarrinho
+    }}
+    >
+      {children}
+    </CarrinhoContexto.Provider>
+    )
+}

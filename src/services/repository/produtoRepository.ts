@@ -2,11 +2,11 @@ import { api } from "../api/api";
 import axios, { AxiosResponse } from "axios";
 
 export interface listaProdutos {
-    id: string;
+    id: number;
     nome: string;
     descricao: string;
-    qtdEstoque: string;
-    valor: string;
+    qtdEstoque: number;
+    valor: number;
     idCategoria: string;
     nomeCategoria: string;
     idFuncionario: string;
