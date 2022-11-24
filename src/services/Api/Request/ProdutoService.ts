@@ -2,11 +2,11 @@ import { AxiosResponse } from "axios";
 import { api } from "../api";
 
 export interface listaProdutos {
-    id: string;
+    id: number;
     nome: string;
     descricao: string;
-    qtdEstoque: string;
-    valor: string;
+    qtdEstoque: number;
+    valor: number;
     idCategoria: string;
     nomeCategoria: string;
     idFuncionario: string;
@@ -19,8 +19,8 @@ const getAll = (): Promise<AxiosResponse<listaProdutos[], any>> => {
     return api.get(`produto/listaProdutos`);
 };
 
-const get = (idProduto: number) => {
-    return api.get(`produto/${idProduto}`);
+const get = (id: number) => {
+    return api.get(`produto/${id}`);
 };
 
 const create = (data) => {

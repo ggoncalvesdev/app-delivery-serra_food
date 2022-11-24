@@ -22,14 +22,17 @@ export const styles = StyleSheet.create({
     },
 
     textNavbar:{
-        fontSize:16
+        fontSize: 16,
     },
 
     containerLastStore:{
         marginTop: 20,
     },
     titleLastStore:{
-        fontSize: 20
+        fontSize: 30,
+        color: "mediumblue",
+        fontStyle: "italic",
+        fontWeight: "800"
     }, 
 
     contentLastStore:{
@@ -41,13 +44,14 @@ export const styles = StyleSheet.create({
         justifyContent:"center"
     },
     imageLastStore:{
-        width:80,
-        height: 80,
-        borderRadius: 50
+        width:300,
+        height: 350,
+       marginTop: 10,
+       marginBottom: 10,     
 
     },
     textLastStore:{
-
+        fontSize: 20
     },
     containerStores:{
         marginTop: 20
@@ -63,6 +67,14 @@ export const styles = StyleSheet.create({
     infoStore:{
         justifyContent:"center",
         marginLeft: 10
+    },
+
+    estiloTextos:{
+        fontSize: 20,
+        textAlign: "center",
+        color: "crimson",
+        fontStyle:"italic",
+        fontWeight: "700"
     },
 
 

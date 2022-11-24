@@ -2,70 +2,58 @@ import React, { useContext, useEffect, useState } from "react";
 import { View, Text, ActivityIndicator, FlatList } from "react-native";
 import { styles } from "./style";
 
-// import { CarrinhoContexto } from '../../Context/CarrinhoContexto';
+import { listaProdutos } from "../../services/Api/Request/ProdutoService";
+import { ModalProduto } from "../../components/Modal";
+import { CarrinhoContexto } from "../../Context/CarrinhoContexto";
+import { ProdutoCard } from "../../components/ProdutoComponent";
+
 
 export const Pedidos = () => {
 
-    // const listaDePedidos = useContext(CarrinhoContexto).listaDePedidos
-    // const precoTotal = useContext(CarrinhoContexto).precototal
+    const listaDeProdutos = useContext(CarrinhoContexto).listaDeProdutos
+    const precoTotal = useContext(CarrinhoContexto).precoTotal
 
-    const [indexSelecionado, setIndexSelecionadoo] = useState<string>("");
-    const [precoSelecionado, setPrecoSelecionado] = useState<number>(0);
-    // const [modal, setModal] = useState<boolean>(false);
-
+    const [indexSelecionado, setIndexSelecionado] = useState<number>(0);
+    const [modal, setModal] = useState<boolean>(false);
+    useEffect(() =>{
+        console.log(listaDeProdutos)
+    });
     return(
 
         <View style={styles.container}>
             <View style={styles.contentTitle}>
-                <Text style={styles.title} >Meu Pedido</Text>
-            </View>
-            <View style={styles.contentRestaurante}>
-                <Text style={styles.titleRestaurante}>Nome do Restaurante</Text>
+                <Text style={styles.title} >Carrinho</Text>
             </View>
 
-            <View style={styles.contentPedido}>
-                <Text style={styles.text}>Pedido:</Text>
-                <Text style={styles.text}>nome da comida</Text>
-            </View>
-            <View style={styles.contentPedido}>
-                <Text style={styles.text}>Preço:</Text>
-                <Text style={styles.text}>preco da comida</Text>
-            </View>
-
-
-            <View style={styles.contentPrecoFinal}>
-                <Text  style={styles.text}>
-                    Preço:
-                </Text>
-                <Text  style={styles.text}>
-                    Preço total
-                </Text>
-            </View>
-            {/* <FlatList
-                data={listaDePedidos}
-                keyExtractor={item => item.index}
+            <FlatList
+                data={listaDeProdutos}
+                keyExtractor={item => item.id.toString()}
                 renderItem={({ item }) => {
                     return(
-                        <View>
-                            <Text>
-                                {item.name}
-                            </Text>
-                            <Text>
-                                {item.preco}
-                            </Text>
-                        </View>
+                        <ProdutoCard
+                            produto={item}
+                            setIndexSelecionado={setIndexSelecionado}
+                            setModal={setModal}
+                        />
                     )
                 }
                 }
             />
             <View>
-                <Text>
+                <Text style={styles.title}>
                     Preço:
                 </Text>
-                <Text>
+                <Text style={styles.title}>
                     R$ {precoTotal},00
                 </Text>
-            </View> */}
+            </View> 
+            {modal &&
+                <ModalProduto
+                    index={indexSelecionado}
+                    modal={modal}
+                    setModal={setModal}
+                />
+            }
 
         </View>
     )

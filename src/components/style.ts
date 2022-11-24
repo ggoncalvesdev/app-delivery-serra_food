@@ -10,6 +10,11 @@ export const style = StyleSheet.create({
         fontWeight: "bold",
         fontSize: 15,
     },
+    categoria:{
+        color: "#fff",
+        fontSize:10,
+        
+    },
     price: {
         color: "#fff",
         fontSize: 12,
