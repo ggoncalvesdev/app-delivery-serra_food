@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     container:{
         flex: 1,
         backgroundColor: 'white',
-        paddingTop: 64,
+        paddingTop: 10,
         paddingHorizontal: 30
     },
     
@@ -13,6 +13,10 @@ export const styles = StyleSheet.create({
     navbar:{
         flexDirection:"row",
         justifyContent:"space-around",
+        height: 30,
+        backgroundColor:"lightgray",
+        borderRadius: 10
+
     },
 
     buttonNavbar:{
