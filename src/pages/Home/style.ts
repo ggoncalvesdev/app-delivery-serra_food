@@ -7,6 +7,23 @@ export const styles = StyleSheet.create({
         paddingTop: 64,
         paddingHorizontal: 30,
     },
+    containerTitle:{
+        alignItems:"center",
+        marginBottom: 20
+    },
+    title:{
+        fontSize: 22,
+        fontWeight:"bold"
+    },
+
+    containerImagem:{
+        alignItems:"center",
+        marginBottom:20
+    },
+    imagemLogo:{
+        width:150,
+        height:150
+    },
 
     navbar: {
         flexDirection: "row",
@@ -24,6 +41,7 @@ export const styles = StyleSheet.create({
 
     containerLastStore: {
         marginTop: 20,
+        alignItems: "center",
     },
     titleLastStore: {
         fontSize: 30,

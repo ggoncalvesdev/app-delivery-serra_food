@@ -5,8 +5,10 @@ export const style = StyleSheet.create({
         fontWeight: "bold",
         fontSize: 18,
     },
-    container: {
-        /* flexDirection: "row", */
+    containerInfo:{
+        justifyContent:"center",
+        alignItems:"center",
+        marginRight:20
     },
 
     card: {
@@ -37,7 +39,7 @@ export const style = StyleSheet.create({
     title: {
         color: "#5047ff",
         fontWeight: "bold",
-        fontSize: 15,
+        fontSize: 20,
         textAlign: "center",
     },
 
@@ -46,9 +48,7 @@ export const style = StyleSheet.create({
         fontSize: 19,
         textAlign: "right",
     },
-    containerDescricao: {
-        marginHorizontal: 50,
-    },
+
     descricao: {
         marginTop: 40,
         color: "#5047ff",

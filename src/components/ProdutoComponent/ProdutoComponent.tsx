@@ -9,7 +9,7 @@ import {
 
 import { CarrinhoContexto } from "../../Context/CarrinhoContexto";
 import { listaProdutos } from "../../services/repository/produtoRepository";
-import { style } from "../style";
+import { style } from "./style";
 import { AntDesign } from "@expo/vector-icons";
 
 interface ProdutosCardProps extends TouchableOpacityProps {
@@ -33,7 +33,7 @@ export const ProdutoCard = ({
 
     return (
         <TouchableOpacity onPress={abreModal}>
-            <View style={style.container}>
+            <View>
                 <View style={style.card}>
                     <View>
                         <Image
@@ -42,17 +42,10 @@ export const ProdutoCard = ({
                         />
                         <Text style={style.title}>{produto.nome}</Text>
                     </View>
-                    {/*  <TouchableOpacity
-                        onPress={() => removeProdutoDoCarrinho(produto.id)}
-                    >
-                        <AntDesign
-                            name="closecircleo"
-                            size={24}
-                            color="#5047ff"
-                        />
-                    </TouchableOpacity> */}
 
-                    <View>
+                    <View style={style.containerInfo}>
+                        <Text style={style.title}>{produto.descricao}</Text>
+
                         <Text style={style.price}>R${produto.valor},00</Text>
                     </View>
                 </View>
