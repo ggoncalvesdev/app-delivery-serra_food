@@ -19,8 +19,8 @@ const getAll = (): Promise<AxiosResponse<listaProdutos[], any>> => {
     return api.get(`produto/listaProdutos`);
 };
 
-const get = (idProduto: number) => {
-    return api.get(`produto?id=${idProduto}`);
+const get = (id: number) => {
+    return api.get(`produto/${id}`);
 };
 
 const create = (data) => {

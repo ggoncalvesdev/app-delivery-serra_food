@@ -44,6 +44,9 @@ export const ProvedorCarrinho = ({children}: ProvedorCarrinhoProps)=>{
 
   function salvaListaDeProdutos (produto: listaProdutos){
     setListaDeProdutos([...listaDeProdutos, produto]);
+    console.log(produto);
+    console.log([...listaDeProdutos, produto]);
+
   };
 
   function removeProdutoDoCarrinho (index : number) {

@@ -15,7 +15,9 @@ export const Pedidos = () => {
 
     const [indexSelecionado, setIndexSelecionado] = useState<number>(0);
     const [modal, setModal] = useState<boolean>(false);
-
+    useEffect(() =>{
+        console.log(listaDeProdutos)
+    });
     return(
 
         <View style={styles.container}>

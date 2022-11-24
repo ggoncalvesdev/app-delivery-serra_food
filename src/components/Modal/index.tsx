@@ -51,6 +51,7 @@ export const ModalProduto = ({modal, setModal, index, ...rest}) =>{
         }
         salvarListaDeProdutos(produtoFinal)
         setModal(false);
+        console.log(produtoFinal)
     }
     return(
 
