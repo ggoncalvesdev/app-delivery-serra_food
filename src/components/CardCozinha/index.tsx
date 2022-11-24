@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+/* import React, { useEffect, useState } from "react";
 import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
 import restaurantService, { listaRestaurantes } from "../../services/Api/Request/RestauranteService";
 import { styles } from "./style";
@@ -61,4 +61,4 @@ export const CardCozinha = () => {
 
         </View>
     )
-}
+} */

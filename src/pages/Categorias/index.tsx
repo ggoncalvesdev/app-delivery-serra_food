@@ -1,13 +1,13 @@
-import React from "react";
+/* import React from "react";
 import { Image, Text, TouchableOpacity, View, ScrollView } from "react-native";
 import { styles } from "./style";
 
-import McDonalds from "../../assets/img/mcdonalds.png";
-import Sushi from "../../assets/img/sushi.png";
-import Sanduba from "../../assets/img/sanduba.jpg";
-import Fastfood from "../../assets/img/fastfood.png";
-import Pizza from "../../assets/img/pizza.png";
-import Açai from "../../assets/img/açai.png";
+import Spider from "./../../assets/img/spiderman.png";
+import Cadeira from "./../../assets/img/cadeira.png";
+import Gabinete from "./../../assets/img/gabinete.png";
+import Harry from "./../../assets/img/harrypotter.png";
+import Mouse from "./../../assets/img/mouse.png";
+
 import { setStatusBarHidden } from "expo-status-bar";
 export const Categorias = ({ navigation }) => {
     return (
@@ -155,3 +155,4 @@ export const Categorias = ({ navigation }) => {
                 
     );
 };
+ */
