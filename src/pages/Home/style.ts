@@ -15,14 +15,15 @@ export const styles = StyleSheet.create({
         justifyContent:"space-around",
         height: 30,
         backgroundColor:"lightgray",
-        borderRadius: 10
-
+        borderRadius: 10,
+        alignItems: "center",
+        
     },
 
     buttonNavbar:{
         
         width: 'auto',
-        height: 20
+        height: 20,
     },
 
     textNavbar:{
