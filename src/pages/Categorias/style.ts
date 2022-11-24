@@ -1,76 +1,59 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    
-    container:{
+    container: {
         flex: 1,
-        backgroundColor: 'white',
+        backgroundColor: "white",
         paddingTop: 64,
-        paddingHorizontal: 30
-    },
-    
-    
-    navbar:{
-        flexDirection:"row",
-        justifyContent:"space-around",
+        paddingHorizontal: 30,
     },
 
-    buttonNavbar:{
-        
-        width: 'auto',
-        height: 20
+    navbar: {
+        flexDirection: "row",
+        justifyContent: "space-around",
     },
 
-    textNavbar:{
-        fontSize:16
+    buttonNavbar: {
+        width: "auto",
+        height: 20,
     },
 
-    containerLastStore:{
+    textNavbar: {
+        fontSize: 16,
+    },
+
+    containerLastStore: {
         marginTop: 20,
     },
-    titleLastStore:{
-        fontSize: 20
-    }, 
+    titleLastStore: {
+        fontSize: 20,
+    },
 
-    contentLastStore:{
+    contentLastStore: {
         marginTop: 10,
         flexDirection: "row",
-    }, 
-    lastStore:{
+    },
+    lastStore: {
         marginRight: 20,
-        justifyContent:"center"
+        justifyContent: "center",
     },
-    imageLastStore:{
-        width:80,
+    imageLastStore: {
+        width: 80,
         height: 80,
-        borderRadius: 50
-
+        borderRadius: 50,
     },
-    textLastStore:{
-
-    },
-    containerStores:{
-        marginTop: 20
-    },
-    titleStores:{
-
-    },
-
-    contentStore:{
+    textLastStore: {},
+    containerStores: {
         marginTop: 20,
-        flexDirection: 'row'
     },
-    infoStore:{
-        justifyContent:"center",
-        marginLeft: 10
+    titleStores: {},
+
+    contentStore: {
+        marginTop: 20,
+        flexDirection: "row",
     },
-
-
-
-
-
-
-
-
-
-})
+    infoStore: {
+        justifyContent: "center",
+        marginLeft: 10,
+    },
+});
