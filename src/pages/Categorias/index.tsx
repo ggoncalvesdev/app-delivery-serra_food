@@ -16,11 +16,11 @@ export const Categorias = ({ navigation }) => {
                     }}
                     style={styles.botao}
                 >
+                    <Entypo name="tablet" size={55} color="black" />
                     <Text style={styles.texto}
                     >
-                        INFORMÁTICA
+                        Informatica
                     </Text>
-                    <Entypo name="tablet" size={30} color="black" />
                 </TouchableOpacity>
 
                 <TouchableOpacity
@@ -29,11 +29,11 @@ export const Categorias = ({ navigation }) => {
                     }} 
                     style={styles.botao}
                 >
+                    <Feather name="pen-tool" size={55} color="black" />
                     <Text style={styles.texto}
                     >
-                        ESCRITÓRIO
+                        Escritório
                     </Text>
-                    <Feather name="pen-tool" size={30} color="black" />
                 </TouchableOpacity>
 
                 <TouchableOpacity 
@@ -42,11 +42,11 @@ export const Categorias = ({ navigation }) => {
                     }}
                     style={styles.botao}
                 >
+                    <Entypo name="open-book" size={55} color="black" />
                     <Text style={styles.texto}
                     >
-                        LIVRARIA
+                        Livraria
                     </Text>
-                    <Entypo name="open-book" size={30} color="black" />
                 </TouchableOpacity>
             </ScrollView>
         </View>            

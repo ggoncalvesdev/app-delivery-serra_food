@@ -5,21 +5,22 @@ export const styles = StyleSheet.create({
     container:{
         flex: 1,
         backgroundColor: 'white',
-        paddingTop: 2,
+        paddingTop: 1,
         paddingHorizontal: 20
     },
 
     botao:{
-        backgroundColor: "#919191",
-        padding: 50,
+        backgroundColor: "#F5F5F5",
+        padding: 45,
         borderRadius: 20,
         alignItems: 'center',
-        marginTop: 30
+        marginTop: 30,
     },
 
     texto: {
         color: "black",
-        fontSize: 22,
+        fontSize: 16,
         fontWeight: 'bold',
+
     },
 })
