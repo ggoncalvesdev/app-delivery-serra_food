@@ -6,15 +6,17 @@ export const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'white',
 
+
     },
-    contentTitle:{
-        paddingTop:60,
-        paddingBottom:10,
-        backgroundColor:"grey",
+
+    containerTitle:{
         alignItems:"center",
+        marginTop:60
     },
+
     title:{
-        fontSize:24
+        fontSize:24,
+        fontWeight:"bold",
     },
 
     contentRestaurante:{
@@ -23,6 +25,16 @@ export const styles = StyleSheet.create({
 
     titleRestaurante:{
         fontSize:20
+    },
+    containerPreco:{
+        padding: 15,
+        marginHorizontal:10,
+        marginVertical:10,
+        backgroundColor: "#AABBCC",
+        flexDirection:"row",
+        borderRadius: 50,
+        justifyContent:"center"
+
     },
 
     contentPedido:{

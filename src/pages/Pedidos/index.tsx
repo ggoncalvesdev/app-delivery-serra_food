@@ -18,10 +18,9 @@ export const Pedidos = () => {
     }); */
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Carrinho</Text>
-            {/* <View style={styles.contentTitle}>
-            </View> */}
-
+            <View style={styles.containerTitle}>
+             <Text style={styles.title}>Meu Carrinho</Text>
+            </View>
             <FlatList
                 data={listaDeProdutos}
                 keyExtractor={(item) => item.id.toString()}
@@ -35,8 +34,8 @@ export const Pedidos = () => {
                     );
                 }}
             />
-            <View>
-                <Text style={styles.title}>Preço:</Text>
+            <View style={styles.containerPreco}>
+                <Text style={styles.title}>Preço Total: </Text>
                 <Text style={styles.title}>R$ {precoTotal},00</Text>
             </View>
             {modal && (

@@ -7,18 +7,32 @@ import Cadeira from "./../../assets/img/cadeira.png";
 import Gabinete from "./../../assets/img/gabinete.png";
 import Harry from "./../../assets/img/harrypotter.png";
 import Mouse from "./../../assets/img/mouse.png";
-import { style } from "../Busca/style";
+import Logo from "../../assets/img/logo.png";
+
+
 
 export const Home = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <ScrollView>
+            <View>
+                <View style={styles.containerTitle}>
+                    <Text style={styles.title}>
+                        Seja bem-vindo
+                    </Text>
+                    <Text style={styles.title}>
+                        ao E-commerce grupo 4
+                    </Text>
+                </View>
+
+                <View style={styles.containerImagem}>
+                    <Image style={styles.imagemLogo} source={Logo}></Image>
+                </View>
                 <View style={styles.containerLastStore}>
                     <Text style={styles.titleLastStore}>
                         Black Friday é aqui!
                     </Text>
                     <ScrollView
-                        /*  horizontal */
+                        horizontal
                         showsHorizontalScrollIndicator={false}
                         style={styles.contentLastStore}
                     >
@@ -94,7 +108,7 @@ export const Home = ({ navigation }) => {
                         </TouchableOpacity>
                     </ScrollView>
                 </View>
-            </ScrollView>
+            </View>
         </View>
     );
 };
