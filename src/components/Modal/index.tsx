@@ -3,9 +3,11 @@ import { View, Modal, Text, ModalProps, Image, TouchableOpacity, ScrollView, Act
 import { AntDesign } from '@expo/vector-icons';
 import { CarrinhoContexto } from '../../Context/CarrinhoContexto';
 import ProdutoService, {
-    listaProdutos,
+    listaProdutos, listaProdutoProps
 } from "../../services/Api/Request/ProdutoService";
 import { style } from './style';
+import { isConstructorDeclaration } from 'typescript';
+import { Botao } from '../BotaoModal';
 
 
 
@@ -14,9 +16,9 @@ interface ModalProdutoProps extends ModalProps{
     setModal: React.Dispatch<React.SetStateAction<boolean>>;
     index: number;
 }
-export const ModalProduto = ({modal, setModal, index, ...rest}) =>{
+export const ModalProduto = ({modal, setModal, index, ...rest}  : ModalProdutoProps )=>{
 
-    const [produtoStatus, setProdutoStatus] = useState<listaProdutos>();
+    const [produtoStatus, setProdutoStatus] = useState<listaProdutoProps>();
     const [carregando, setCarregando] = useState<boolean>(true);
 
     
@@ -24,15 +26,17 @@ export const ModalProduto = ({modal, setModal, index, ...rest}) =>{
     useEffect(() => {
         ProdutoService.get(index).then((res)=> {
             setProdutoStatus(res.data);
-        })
-        .catch((err) => {
+        }).catch((err) => {
             console.log(err);
-        })
-        .finally(() => setCarregando(false));
+        }).finally(() => {
+        setCarregando(false);
+    })
 }, []);
 
     const salvarListaDeProdutos = useContext(CarrinhoContexto).salvaListaDeProdutos
     const tiraProdutoDoCarrinho = useContext(CarrinhoContexto).removeProdutoDoCarrinho
+
+    console.log(`Produtoooo:${salvarListaDeProdutos.length}`);
 
     function botaProdutoNoCarrinho() {
         let produtoFinal: listaProdutos ={
@@ -51,7 +55,7 @@ export const ModalProduto = ({modal, setModal, index, ...rest}) =>{
         }
         salvarListaDeProdutos(produtoFinal)
         setModal(false);
-        console.log(produtoFinal)
+        console.log(`ProdutoFinal:${produtoFinal.nome}`)
     }
     return(
 
@@ -102,13 +106,14 @@ export const ModalProduto = ({modal, setModal, index, ...rest}) =>{
                             {produtoStatus.descricao}
                         </Text>
                     </View>
-                    <TouchableOpacity style={style.botao} onPress={()=>tiraProdutoDoCarrinho(index)}>
-                        <Text style={style.textBotao}>Remover</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={style.botao} onPress={botaProdutoNoCarrinho}>
-                        <Text style={style.textBotao}>Comprar</Text>
-                    </TouchableOpacity>
+                    <Botao
+                    title='Remover'
+                    onPress={()=>tiraProdutoDoCarrinho(index)}
+                    />
+                    <Botao
+                    title='Comprar'
+                    onPress={botaProdutoNoCarrinho}
+                    />
                     </>
            
                 }

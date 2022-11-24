@@ -53,20 +53,7 @@ export const style = StyleSheet.create({
         marginRight: 2
     },
 
-    botao:{
-        justifyContent:"center",
-        backgroundColor: "#fff",
-        alignSelf:"center",
-        paddingHorizontal: 60,
-        paddingVertical:20,
-        marginBottom: 20,
-        borderRadius:50,
-    },
 
-    textBotao:{
-        fontWeight:"bold",
-        fontSize:16
-    },
 
 
 

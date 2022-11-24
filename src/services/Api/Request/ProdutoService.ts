@@ -15,6 +15,21 @@ export interface listaProdutos {
     fotoLink: string;
 }
 
+export interface listaProdutoProps {
+    id: number;
+    nome: string;
+    descricao: string;
+    qtdEstoque: number;
+    valor: number;
+    idCategoria: string;
+    nomeCategoria: string;
+    idFuncionario: string;
+    nomeFuncionario: string;
+    dataFabricacao: string;
+    fotoLink: string;
+}
+
+
 const getAll = (): Promise<AxiosResponse<listaProdutos[], any>> => {
     return api.get(`produto/listaProdutos`);
 };
