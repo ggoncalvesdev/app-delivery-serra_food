@@ -5,7 +5,6 @@ export const style = StyleSheet.create({
         flex: 1,
         backgroundColor: "#121015",
         paddingHorizontal: 30,
-        /*    paddingTop: 60, */
     },
     title: {
         marginBottom: 10,
@@ -25,13 +24,14 @@ export const style = StyleSheet.create({
     },
     Search: {
         backgroundColor: "#E2E2E2",
-        /*         marginTop: 60, */
+        marginTop: 60,
         marginBottom: 15,
         paddingVertical: 10,
         paddingHorizontal: 30,
         marginHorizontal: 15,
         textAlign: "left",
     },
+
     fotoContainer: {
         alignItems: "center",
     },
@@ -39,5 +39,12 @@ export const style = StyleSheet.create({
         marginHorizontal: 50,
         width: 50,
         height: 50,
+    },
+    containeer: {
+        marginTop: 30,
+        padding: 2,
+    },
+    buscador: {
+        marginTop: 30,
     },
 });

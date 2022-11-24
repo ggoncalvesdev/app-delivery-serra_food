@@ -1,7 +1,6 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import { HomeScren } from "../../pages/Text/HomeScren";
 import { Produtos } from "../../pages/Produtos";
 import { Home } from "../../pages/Home";
 import { Categorias } from "../../pages/Categorias";
