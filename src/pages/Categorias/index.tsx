@@ -1,4 +1,4 @@
-/* import React from "react";
+/*  import React from "react";
 import { Image, Text, TouchableOpacity, View, ScrollView } from "react-native";
 import { styles } from "./style";
 
@@ -155,4 +155,4 @@ export const Categorias = ({ navigation }) => {
                 
     );
 };
- */
+  */

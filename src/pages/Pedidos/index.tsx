@@ -5,57 +5,47 @@ import { styles } from "./style";
 import { listaProdutos } from "../../services/Api/Request/ProdutoService";
 import { ModalProduto } from "../../components/Modal";
 import { CarrinhoContexto } from "../../Context/CarrinhoContexto";
-import { ProdutoCard } from "../../components/ProdutoComponent";
-
+import { ProdutoCard } from "../../components/ProdutoComponent/ProdutoComponent";
 
 export const Pedidos = () => {
-
-    const listaDeProdutos = useContext(CarrinhoContexto).listaDeProdutos
-    const precoTotal = useContext(CarrinhoContexto).precoTotal
+    const listaDeProdutos = useContext(CarrinhoContexto).listaDeProdutos;
+    const precoTotal = useContext(CarrinhoContexto).precoTotal;
 
     const [indexSelecionado, setIndexSelecionado] = useState<number>(0);
     const [modal, setModal] = useState<boolean>(false);
-    useEffect(() =>{
-        console.log(listaDeProdutos)
-    });
-    return(
-
+    /*  useEffect(() => {
+        console.log(listaDeProdutos);
+    }); */
+    return (
         <View style={styles.container}>
-            <View style={styles.contentTitle}>
-                <Text style={styles.title} >Carrinho</Text>
-            </View>
+            <Text style={styles.title}>Carrinho</Text>
+            {/* <View style={styles.contentTitle}>
+            </View> */}
 
             <FlatList
                 data={listaDeProdutos}
-                keyExtractor={item => item.id.toString()}
+                keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => {
-                    return(
+                    return (
                         <ProdutoCard
                             produto={item}
                             setIndexSelecionado={setIndexSelecionado}
                             setModal={setModal}
                         />
-                    )
-                }
-                }
+                    );
+                }}
             />
             <View>
-                <Text style={styles.title}>
-                    Preço:
-                </Text>
-                <Text style={styles.title}>
-                    R$ {precoTotal},00
-                </Text>
-            </View> 
-            {modal &&
+                <Text style={styles.title}>Preço:</Text>
+                <Text style={styles.title}>R$ {precoTotal},00</Text>
+            </View>
+            {modal && (
                 <ModalProduto
                     index={indexSelecionado}
                     modal={modal}
                     setModal={setModal}
                 />
-            }
-
+            )}
         </View>
-    )
-
-}
+    );
+};

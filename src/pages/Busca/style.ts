@@ -7,13 +7,13 @@ export const style = StyleSheet.create({
         paddingHorizontal: 30,
     },
     title: {
-        marginBottom: 10,
-        marginVertical: 10,
-        paddingTop: 20,
-        color: "#121015",
-        fontSize: 24,
+        marginBottom: 1,
+        marginVertical: 1,
+        marginHorizontal: 15,
+        paddingTop: 2,
+        color: "#5047ff",
+        fontSize: 18,
         fontWeight: "bold",
-        textAlign: "center",
     },
     ContainerTitle: {
         position: "relative",
@@ -44,7 +44,27 @@ export const style = StyleSheet.create({
         marginTop: 30,
         padding: 2,
     },
+    containerBusca: {
+        marginTop: 70,
+        marginHorizontal: 10,
+        marginBottom: 5,
+        padding: 3,
+        borderRadius: 2,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.22,
+        shadowRadius: 0.22,
+
+        elevation: 1,
+    },
     buscador: {
         marginTop: 30,
+    },
+    contentLastStore: {
+        marginTop: 10,
+        flexDirection: "row",
     },
 });

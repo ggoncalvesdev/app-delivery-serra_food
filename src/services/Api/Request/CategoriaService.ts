@@ -2,7 +2,7 @@ import { AxiosResponse } from "axios";
 import { api } from "../api";
 
 export interface listaCategorias {
-    id: string;
+    id: number;
     nome: string;
     descricao: string;
 }

@@ -1,4 +1,4 @@
-/* import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
 import restaurantService, {
     listaRestaurantes,
@@ -61,6 +61,5 @@ export const CardCozinha = () => {
                 }}
             />
         </View>
-
-    )
-} */
+    );
+};
