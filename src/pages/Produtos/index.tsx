@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from "react";
-import {
-    View,
-    Text,
-    ActivityIndicator,
-    FlatList,
-    Image,
-    TouchableOpacity,
-} from "react-native";
+import { FlatList } from "react-native";
 import { styles } from "../Produtos/style";
 
 import ProdutoService, {
     listaProdutos,
 } from "../../services/Api/Request/ProdutoService";
+
 import { ProdutoCard } from "../../components/ProdutoComponent/ProdutoComponent";
 import { ModalProduto } from "../../components/Modal";
 
@@ -43,7 +37,6 @@ export const Produtos = () => {
             <FlatList
                 style={{ width: "100%" }}
                 data={listaProdutos}
-                /* numColumns={2} */
                 renderItem={({ item }) => {
                     return (
                         <ProdutoCard

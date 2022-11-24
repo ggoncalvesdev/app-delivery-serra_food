@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TouchableOpacity, View, Text, ScrollView } from "react-native";
+import { TouchableOpacity, View, Text } from "react-native";
 import { TextInput } from "react-native-paper";
 import clienteService, {
     listaClientes,

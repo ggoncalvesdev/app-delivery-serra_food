@@ -1,29 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { View, TextInput, FlatList } from "react-native";
-
 import { style } from "./style";
 
 import ProdutoService, {
     listaProdutos,
 } from "../../services/Api/Request/ProdutoService";
+
 import CategoriaService from "../../services/Api/Request/CategoriaService";
-
 import { ProdutoCard } from "../../components/ProdutoComponent/ProdutoComponent";
-
-import filter from "lodash.filter";
 import { ModalProduto } from "../../components/Modal";
 
+import filter from "lodash.filter";
+
 export function Busca() {
-    const [fullData, setFullData] = useState([]);
-
     const [query, setQuery] = useState("");
-
     const [modal, setModal] = useState<boolean>(false);
+    const [fullData, setFullData] = useState([]);
     const [carregando, setCarregando] = useState<boolean>(true);
-    const [indexSelecionado, setIndexSelecionado] = useState<number>(0);
-
     const [listaProdutos, setlistaProdutos] = useState<listaProdutos[]>([]);
     const [listaCategoria, setlistaCategoria] = useState([]);
+    const [indexSelecionado, setIndexSelecionado] = useState<number>(0);
 
     useEffect(() => {
         CategoriaService.getAll()
@@ -57,8 +53,6 @@ export function Busca() {
         });
         setlistaProdutos(filteredData);
         setQuery(text);
-
-        console.log(formattedQuery);
     };
 
     const contains = ({ nome, descricao }, query) => {
@@ -89,7 +83,6 @@ export function Busca() {
             </View>
             <FlatList
                 data={listaProdutos}
-                /* numColumns={2} */
                 renderItem={({ item }) => {
                     return (
                         <ProdutoCard

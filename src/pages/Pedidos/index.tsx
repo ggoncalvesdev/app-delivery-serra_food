@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { View, Text, ActivityIndicator, FlatList } from "react-native";
 import { styles } from "./style";
 
-import { listaProdutos } from "../../services/Api/Request/ProdutoService";
 import { ModalProduto } from "../../components/Modal";
 import { CarrinhoContexto } from "../../Context/CarrinhoContexto";
 import { ProdutoCard } from "../../components/ProdutoComponent/ProdutoComponent";
@@ -13,13 +12,11 @@ export const Pedidos = () => {
 
     const [indexSelecionado, setIndexSelecionado] = useState<number>(0);
     const [modal, setModal] = useState<boolean>(false);
-    /*  useEffect(() => {
-        console.log(listaDeProdutos);
-    }); */
+
     return (
         <View style={styles.container}>
             <View style={styles.containerTitle}>
-             <Text style={styles.title}>Meu Carrinho</Text>
+                <Text style={styles.title}>Meu Carrinho</Text>
             </View>
             <FlatList
                 data={listaDeProdutos}

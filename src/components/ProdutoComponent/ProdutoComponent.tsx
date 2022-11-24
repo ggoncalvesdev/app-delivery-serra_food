@@ -10,7 +10,6 @@ import {
 import { CarrinhoContexto } from "../../Context/CarrinhoContexto";
 import { listaProdutos } from "../../services/repository/produtoRepository";
 import { style } from "./style";
-import { AntDesign } from "@expo/vector-icons";
 
 interface ProdutosCardProps extends TouchableOpacityProps {
     produto: listaProdutos;

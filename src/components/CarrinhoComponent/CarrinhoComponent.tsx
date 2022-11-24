@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import {
-    Image,
     Text,
     TouchableOpacity,
     TouchableOpacityProps,
@@ -8,9 +7,7 @@ import {
 } from "react-native";
 
 import { style } from "./style";
-import { CarrinhoContexto } from "../../Context/CarrinhoContexto";
 
-import { AntDesign } from "@expo/vector-icons";
 import { listaCategorias } from "../../services/Api/Request/CategoriaService";
 
 interface CarrinhoCardProps extends TouchableOpacityProps {
@@ -19,11 +16,7 @@ interface CarrinhoCardProps extends TouchableOpacityProps {
     setIndexSelecionado: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export const CadegoriaCard = ({
-    produto,
-    setModal,
-}: /*   setIndexSelecionado, */
-CarrinhoCardProps) => {
+export const CadegoriaCard = ({ produto, setModal }: CarrinhoCardProps) => {
     return (
         <TouchableOpacity>
             <View style={style.container}>

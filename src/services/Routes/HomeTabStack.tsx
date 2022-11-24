@@ -6,22 +6,21 @@ import { NavigationContainer } from "@react-navigation/native";
 
 import { Home } from "../../pages/Home";
 import { Busca } from "../../pages/Busca";
+import { Perfil } from "../../pages/Perfil";
 import { Pedidos } from "../../pages/Pedidos";
 
 import HomeIcon from "../../assets/icons/home.png";
 import SearchIcon from "../../assets/icons/search.png";
-import DeliveryIcon from "../../assets/icons/delivery.png";
 import IconPerfil from "../../assets/icons/perfil.png";
-
-import { Perfil } from "../../pages/Perfil";
+import DeliveryIcon from "../../assets/icons/delivery.png";
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
 export type RootTabParamList = {
     Home: undefined;
     Busca: undefined;
-    Pedidos: undefined;
     Perfil: undefined;
+    Pedidos: undefined;
 };
 
 function HomeTabStack() {
