@@ -13,7 +13,7 @@ import Logo from "../../assets/img/logo.png";
 
 export const Home = ({ navigation }) => {
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <View>
                 <View style={styles.containerTitle}>
                     <Text style={styles.title}>
@@ -109,6 +109,6 @@ export const Home = ({ navigation }) => {
                     </ScrollView>
                 </View>
             </View>
-        </View>
+        </ScrollView>
     );
 };
