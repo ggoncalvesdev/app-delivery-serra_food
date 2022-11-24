@@ -42,13 +42,13 @@ export const ProdutoCard = ({
                         />
                         <Text style={style.title}>{produto.nome}</Text>
                     </View>
-                    {/*   <TouchableOpacity
+                    {/*  <TouchableOpacity
                         onPress={() => removeProdutoDoCarrinho(produto.id)}
                     >
                         <AntDesign
                             name="closecircleo"
                             size={24}
-                            color="white"
+                            color="#5047ff"
                         />
                     </TouchableOpacity> */}
 

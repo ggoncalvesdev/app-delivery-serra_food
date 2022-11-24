@@ -1,13 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-    View,
-    Text,
-    TextInput,
-    FlatList,
-    TouchableOpacity,
-    ScrollView,
-    TouchableOpacityProps,
-} from "react-native";
+import { View, TextInput, FlatList } from "react-native";
 
 import { style } from "./style";
 
@@ -21,7 +13,7 @@ import { ProdutoCard } from "../../components/ProdutoComponent/ProdutoComponent"
 import filter from "lodash.filter";
 import { ModalProduto } from "../../components/Modal";
 
-export function Busca({ navigation }) {
+export function Busca() {
     const [fullData, setFullData] = useState([]);
 
     const [query, setQuery] = useState("");
@@ -73,7 +65,6 @@ export function Busca({ navigation }) {
         if (nome.includes(query) || descricao.includes(query)) {
             return true;
         }
-
         return false;
     };
 
@@ -96,60 +87,6 @@ export function Busca({ navigation }) {
                     }}
                 />
             </View>
-            {/* <View>
-                <TouchableOpacity>
-                <View>
-                <FlatList
-                    data={listaCategoria}
-                    numColumns={2}
-                    renderItem={({ item }) => {
-                        return (
-                            <>
-                                <CadegoriaCard
-                                    produto={item}
-                                    setModal={setModal}
-                                    setIndexSelecionado={setIndexSelecionado}
-                                />
-
-                                <View>
-                                    <Text style={style.title}>
-                                        {item.nomeCategoria}
-                                    </Text>
-                                </View>
-                            </>
-                        );
-                    }}
-                />
-                </View>
-                </TouchableOpacity>
-            </View> */}
-            {/* <ScrollView
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                style={style.contentLastStore}
-            >
-                <FlatList
-                    data={listaCategoria}
-                    numColumns={2}
-                    renderItem={({ item }) => {
-                        return (
-                            <>
-                                <CadegoriaCard
-                                    produto={item}
-                                    setModal={setModal}
-                                    setIndexSelecionado={setIndexSelecionado}
-                                />
-
-                                <View>
-                                    <Text style={style.title}>
-                                        {item.nomeCategoria}
-                                    </Text>
-                                </View>
-                            </>
-                        );
-                    }}
-                />
-            </ScrollView> */}
             <FlatList
                 data={listaProdutos}
                 /* numColumns={2} */
@@ -165,7 +102,6 @@ export function Busca({ navigation }) {
             />
             {modal && (
                 <ModalProduto
-                    /*                     navigation.navigate={} */
                     index={indexSelecionado}
                     modal={modal}
                     setModal={setModal}

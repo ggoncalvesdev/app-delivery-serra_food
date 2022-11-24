@@ -26,11 +26,11 @@ const update = (idCategoria: number, data) => {
 const remove = (idCategoria: number) => {
     return api.delete(`categoria/${idCategoria}`);
 };
-const produtosService = {
+const categoriasService = {
     getAll,
     get,
     create,
     update,
     remove,
 };
-export default produtosService;
+export default categoriasService;
