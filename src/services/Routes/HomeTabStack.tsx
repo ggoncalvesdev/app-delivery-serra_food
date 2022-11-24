@@ -1,22 +1,88 @@
 import React from "react";
-import { createStackNavigator } from "@react-navigation/stack";
+import { Image } from "react-native";
 
-import { Produtos } from "../../pages/Produtos";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { NavigationContainer } from "@react-navigation/native";
+
 import { Home } from "../../pages/Home";
-//import { Categorias } from "../../pages/Categorias";
+import { Busca } from "../../pages/Busca";
 import { Pedidos } from "../../pages/Pedidos";
-//import { CardCozinha } from "../../components/CardCozinha";
 
-export function HomeTabStack() {
-    const HomeStack = createStackNavigator();
+import HomeIcon from "../../assets/icons/home.png";
+import SearchIcon from "../../assets/icons/search.png";
+import DeliveryIcon from "../../assets/icons/delivery.png";
 
+const Tab = createBottomTabNavigator<RootTabParamList>();
+
+export type RootTabParamList = {
+    Home: undefined;
+    Busca: undefined;
+    Pedidos: undefined;
+};
+
+function HomeTabStack() {
     return (
-        <HomeStack.Navigator>
-            <HomeStack.Screen name="Início" component={Home} />
-            <HomeStack.Screen name="Produtos" component={Produtos} />
-            {/* <HomeStack.Screen name="Categorias" component={Categorias} /> */}
-            <HomeStack.Screen name="Pedidos" component={Pedidos} />
-            {/* <HomeStack.Screen name="CardCozinha" component={CardCozinha} /> */}
-        </HomeStack.Navigator>
+        <Tab.Navigator
+            screenOptions={{
+                headerShown: false,
+                tabBarActiveTintColor: "#5047ff",
+                tabBarInactiveTintColor: "#919191",
+                tabBarInactiveBackgroundColor: "#fff",
+                tabBarStyle: { backgroundColor: "#fff", paddingBottom: 2 },
+            }}
+        >
+            <Tab.Screen
+                name="Home"
+                component={Home}
+                options={{
+                    tabBarIcon: ({ color }) => {
+                        return (
+                            <Image
+                                resizeMode="contain"
+                                source={HomeIcon}
+                                style={{ tintColor: color, width: 30 }}
+                            />
+                        );
+                    },
+                }}
+            />
+            <Tab.Screen
+                name="Busca"
+                component={Busca}
+                options={{
+                    tabBarIcon: ({ color }) => {
+                        return (
+                            <Image
+                                resizeMode="contain"
+                                source={SearchIcon}
+                                style={{ tintColor: color, width: 30 }}
+                            />
+                        );
+                    },
+                }}
+            />
+            <Tab.Screen
+                name="Pedidos"
+                component={Pedidos}
+                options={{
+                    tabBarIcon: ({ color }) => {
+                        return (
+                            <Image
+                                resizeMode="contain"
+                                source={DeliveryIcon}
+                                style={{ tintColor: color, width: 30 }}
+                            />
+                        );
+                    },
+                }}
+            />
+        </Tab.Navigator>
+    );
+}
+export function Routes() {
+    return (
+        <NavigationContainer>
+            <HomeTabStack />
+        </NavigationContainer>
     );
 }
