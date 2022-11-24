@@ -1,88 +1,73 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    
-    container:{
+    container: {
         flex: 1,
-        backgroundColor: 'white',
+        backgroundColor: "white",
         paddingTop: 64,
-        paddingHorizontal: 30
-    },
-    
-    
-    navbar:{
-        flexDirection:"row",
-        justifyContent:"space-around",
+        paddingHorizontal: 30,
     },
 
-    buttonNavbar:{
-        
-        width: 'auto',
-        height: 20
+    navbar: {
+        flexDirection: "row",
+        justifyContent: "space-around",
     },
 
-    textNavbar:{
+    buttonNavbar: {
+        width: "auto",
+        height: 20,
+    },
+
+    textNavbar: {
         fontSize: 16,
     },
 
-    containerLastStore:{
+    containerLastStore: {
         marginTop: 20,
     },
-    titleLastStore:{
+    titleLastStore: {
         fontSize: 30,
         color: "mediumblue",
         fontStyle: "italic",
-        fontWeight: "800"
-    }, 
+        fontWeight: "800",
+    },
 
-    contentLastStore:{
+    contentLastStore: {
         marginTop: 10,
         flexDirection: "row",
-    }, 
-    lastStore:{
+    },
+    lastStore: {
         marginRight: 20,
-        justifyContent:"center"
+        justifyContent: "center",
     },
-    imageLastStore:{
-        width:300,
+    imageLastStore: {
+        width: 300,
         height: 350,
-       marginTop: 10,
-       marginBottom: 10,     
-
+        marginTop: 10,
+        marginBottom: 10,
     },
-    textLastStore:{
-        fontSize: 20
+    textLastStore: {
+        fontSize: 20,
     },
-    containerStores:{
-        marginTop: 20
-    },
-    titleStores:{
-
-    },
-
-    contentStore:{
+    containerStores: {
         marginTop: 20,
-        flexDirection: 'row'
     },
-    infoStore:{
-        justifyContent:"center",
-        marginLeft: 10
+    titleStores: {},
+
+    contentStore: {
+        marginTop: 20,
+        flexDirection: "row",
+    },
+    infoStore: {
+        justifyContent: "center",
+        marginLeft: 10,
     },
 
-    estiloTextos:{
+    estiloTextos: {
         fontSize: 20,
         textAlign: "center",
         color: "crimson",
-        fontStyle:"italic",
-        fontWeight: "700"
+        fontStyle: "italic",
+        fontWeight: "700",
     },
-
-
-
-
-
-
-
-
-
-})
+});

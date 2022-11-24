@@ -14,9 +14,3 @@ export interface listaProdutos {
     dataFabricacao: string;
     fotoLink: string;
 }
-
-export function getProduto(): Promise<AxiosResponse<listaProdutos[], any>> {
-    let url = `produto/listaProdutos`;
-
-    return api.get(url);
-}
