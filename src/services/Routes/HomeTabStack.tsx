@@ -4,20 +4,20 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { HomeScren } from "../../pages/Text/HomeScren";
 import { Produtos } from "../../pages/Produtos";
 import { Home } from "../../pages/Home";
-import { Categorias } from "../../pages/Categorias";
+//import { Categorias } from "../../pages/Categorias";
 import { Pedidos } from "../../pages/Pedidos";
-import { CardCozinha } from "../../components/CardCozinha";
+//import { CardCozinha } from "../../components/CardCozinha";
 
 export function HomeTabStack() {
     const HomeStack = createStackNavigator();
 
     return (
         <HomeStack.Navigator>
-            <HomeStack.Screen name="Homeeee" component={Home} />
+            <HomeStack.Screen name="Início" component={Home} />
             <HomeStack.Screen name="Produtos" component={Produtos} />
-            <HomeStack.Screen name="Categorias" component={Categorias} />
+            {/* <HomeStack.Screen name="Categorias" component={Categorias} /> */}
             <HomeStack.Screen name="Pedidos" component={Pedidos} />
-            <HomeStack.Screen name="CardCozinha" component={CardCozinha} />
+            {/* <HomeStack.Screen name="CardCozinha" component={CardCozinha} /> */}
         </HomeStack.Navigator>
     );
 }
