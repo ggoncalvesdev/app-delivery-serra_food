@@ -1,157 +1,54 @@
 import React from "react";
-import { Image, Text, TouchableOpacity, View, ScrollView } from "react-native";
+import { Text, TouchableOpacity, View, ScrollView } from "react-native";
 import { styles } from "./style";
+import { Entypo } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 
-import McDonalds from "../../assets/img/mcdonalds.png";
-import Sushi from "../../assets/img/sushi.png";
-import Sanduba from "../../assets/img/sanduba.jpg";
-import Fastfood from "../../assets/img/fastfood.png";
-import Pizza from "../../assets/img/pizza.png";
-import Açai from "../../assets/img/açai.png";
-import { setStatusBarHidden } from "expo-status-bar";
+
 export const Categorias = ({ navigation }) => {
+
     return (
         <View style={styles.container}>
             <ScrollView>
-                <View
-                    style={styles.navbar}
+                <TouchableOpacity 
+                    onPress={() => {
+                        navigation.navigate("#");
+                    }}
+                    style={styles.botao}
                 >
-                    
-
-                    <TouchableOpacity
-                        onPress={() => {
-                            navigation.navigate("Restaurantes");
-                        }}
-                        style={styles.buttonNavbar}
+                    <Text style={styles.texto}
                     >
-                        <Text style={styles.textNavbar}>Restaurantes</Text>
-                    </TouchableOpacity>
-
-                    
-
-                    
-                </View>
-
-                <View style={styles.containerLastStore}>
-                    <Text style={styles.titleLastStore}>
-                        Variedades
+                        INFORMÁTICA
                     </Text>
-                    <ScrollView
-                        horizontal
-                        showsHorizontalScrollIndicator={false}
-                        style={styles.contentLastStore}
-                    >
-                        <TouchableOpacity
-                            onPress={() => {
-                                navigation.navigate("CardCozinha");
-                            }}
-                            style={styles.lastStore}
-                        >
-                            <Image
-                                style={styles.imageLastStore}
-                                source={Sushi}
-                            ></Image>
-                            <Text>Japonês</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            onPress={() => {
-                                navigation.navigate("Perfil");
-                            }}
-                            style={styles.lastStore}
-                        >
-                            <Image
-                                style={styles.imageLastStore}
-                                source={Sanduba}
-                            ></Image>
-                            <Text>Sanduíches</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            onPress={() => {
-                                navigation.navigate("Perfil");
-                            }}
-                            style={styles.lastStore}
-                        >
-                            <Image
-                                style={styles.imageLastStore}
-                                source={Fastfood}
-                            ></Image>
-                            <Text>Fast-food</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            onPress={() => {
-                                navigation.navigate("Perfil");
-                            }}
-                            style={styles.lastStore}
-                        >
-                            <Image
-                                style={styles.imageLastStore}
-                                source={Pizza}
-                            ></Image>
-                            <Text>Pizza</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            onPress={() => {
-                                navigation.navigate("Perfil");
-                            }}
-                            style={styles.lastStore}
-                        >
-                            <Image
-                                style={styles.imageLastStore}
-                                source={Açai}
-                            ></Image>
-                            <Text>Açaí</Text>
-                        </TouchableOpacity>
-                    </ScrollView>
-                </View>
+                    <Entypo name="tablet" size={30} color="black" />
+                </TouchableOpacity>
 
-                <View style={styles.containerLastStore}>
-                    <Text style={styles.titleLastStore}>Promoções</Text>
-                    <ScrollView
-                        horizontal
-                        showsHorizontalScrollIndicator={false}
-                        style={styles.contentLastStore}
+                <TouchableOpacity
+                    onPress={() => {
+                        navigation.navigate("#");
+                    }} 
+                    style={styles.botao}
+                >
+                    <Text style={styles.texto}
                     >
-                        <TouchableOpacity style={styles.lastStore}>
-                            <Image
-                                style={styles.imageLastStore}
-                                source={McDonalds}
-                            ></Image>
-                            <Text>Mc Donald's</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.lastStore}>
-                            <Image
-                                style={styles.imageLastStore}
-                                source={McDonalds}
-                            ></Image>
-                            <Text>Mc Donald's</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.lastStore}>
-                            <Image
-                                style={styles.imageLastStore}
-                                source={McDonalds}
-                            ></Image>
-                            <Text>Mc Donald's</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.lastStore}>
-                            <Image
-                                style={styles.imageLastStore}
-                                source={McDonalds}
-                            ></Image>
-                            <Text>Mc Donald's</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.lastStore}>
-                            <Image
-                                style={styles.imageLastStore}
-                                source={McDonalds}
-                            ></Image>
-                            <Text>Mc Donald's</Text>
-                        </TouchableOpacity>
-                    </ScrollView>
-                </View>
+                        ESCRITÓRIO
+                    </Text>
+                    <Feather name="pen-tool" size={30} color="black" />
+                </TouchableOpacity>
 
+                <TouchableOpacity 
+                    onPress={() => {
+                        navigation.navigate("#");
+                    }}
+                    style={styles.botao}
+                >
+                    <Text style={styles.texto}
+                    >
+                        LIVRARIA
+                    </Text>
+                    <Entypo name="open-book" size={30} color="black" />
+                </TouchableOpacity>
             </ScrollView>
-            </View>
-
-                
+        </View>            
     );
 };
